@@ -1,0 +1,9 @@
+var rp = rpsls.at(rpsls.address)
+accounts = web3.eth.accounts
+host = accounts[0]
+other = accounts[1]
+rp.start("scissors", "ciao", {value: web3.toWei(5, "ether")})
+rp.join(host, "paper", "ciao", {from: other, value: web3.toWei(5, "ether")})
+rp.reveal(host, "scissors", "ciao")
+rp.reveal(host, "paper", "ciao", {from: other})
+
